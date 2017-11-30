@@ -1,6 +1,6 @@
 # VokabelTrainer
 Just a Java-Project for school
 
-2 änderung alles kacke geh weg
+Fragen an Herrn Schlülter:
 
-I try to update this file
+1. Muss das Programm wie ein "echtes" programm anwendbar sein? ALso kann man noch Debug ausgeben oder Debug funtionen drin lassen? oder müssen diese ausgebaut sein?
