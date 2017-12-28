@@ -20,7 +20,7 @@ public class Main {
 			switch(liesKorrektenInteger(in,"Menü Auswahl falsch, bitte neu"))
 			{		
 					case 0: printMenue(); break;
-					//case 11:  _11_AnfangEinfuegen(in,L1); break;
+					case 11:  _11_Egnlisch(in,vokabelListe); break;
 //					case 12:  _12_EndeEinfuegen(in,L1); break;
 //					case 13:  _13_EinfuegenVorElement(in,L1); break;
 //					case 14:  _14_EinfuegenNachElement(in,L1); break;
@@ -38,6 +38,20 @@ public class Main {
 		}//end while
 		
 		System.out.println("-----Programm Ende-----");
+	}
+	
+	static void _11_Egnlisch(Scanner in, Liste vokabelListe)
+	{
+		System.out.println("\n------");
+		System.out.println("Sie haben ");
+		
+		ListElement tmp = vokabelListe.getVokabel(2);
+		Session s1 =  new Session(); ;
+		
+		
+		System.out.println(s1.startSession(,));
+		
+		System.out.println("------\n");
 	}
 				
 	static void _41_beispielVokabeln(Liste vokabelListe)

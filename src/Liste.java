@@ -140,16 +140,18 @@ public class Liste {
 //		this.myList = null;
 //	}
 //	
-	public String getVokabel(int suchID)
+	public ListElement getVokabel(int suchID)
 	{
 		ListElement tmp = myList;
 			while(tmp != null)
 			{
 				if (tmp.id == suchID )
-					return "ID: "+tmp.id +"=>  " + tmp.getEnglisch() + "-" + tmp.getDeutsch();
+					//return "ID: "+tmp.id +"=>  " + tmp.getEnglisch() + "-" + tmp.getDeutsch();
+					return tmp;
 				tmp = tmp.next;
 			}
-		return "ID nicht gefunden"; 
+			return tmp;
+	// "ID nicht gefunden"; 
 	}
 	
 	public int zaehlen()

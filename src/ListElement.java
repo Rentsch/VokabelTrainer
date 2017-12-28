@@ -6,9 +6,8 @@ public class ListElement {
 	int id;
 	int aussortierCounter;
 	ListElement next;
-	
-	public ListElement(){}
-	
+
+	//-----Konstruktoren -----
 	public ListElement(String tmpEnglisch, String tmpDeutsch, int tmpID)
 	{
 		this.englisch = tmpEnglisch;
