@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Liste {
 
@@ -41,104 +44,23 @@ public class Liste {
 		
 		this.idCounter++;
 	}
-//	public void einfuegenAmAnfang (String tmpEnglisch, String tmpDeutsch)
-//	{
-//		ListElement neu = new ListElement(); 
-//		neu.next = this.myList;
-//		this.myList = neu;
-//		
-//		neu.englisch = tmpEnglisch;
-//		neu.deutsch = tmpDeutsch;
-//	}
-//	
-//	public void einfuegenAmEnde (int value, String text)
-//	{
-//		ListElement neu = new ListElement(); 
-//		ListElement tmp = myList;
-//		
-//		// wenn Liste nicht leer
-//		if (tmp != null)
-//		{
-//			// suche bis letztes Element (next = null)
-//			while(tmp.next != null)
-//			{
-//				tmp = tmp.next;
-//			}
-//		
-//			tmp.next = neu;
-//			neu.next = null;		
-//
-//			neu.value = value;
-//			neu.text = text;
-//		}else{
-//			einfuegenAmAnfang(value, text);
-//		}
-//	}
-//	
-//	public void einfuegenVorElement(int suchID, int value, String text)
-//	{
-//		ListElement tmp = myList;
-//		ListElement vortmp = null;
-//		
-//		// wenn Liste nicht leer
-//		if (tmp != null)
-//		{
-//			if (tmp.value == suchID)
-//			{
-//				ListElement neu = new ListElement(value, text); 
-//				neu.setNext(tmp); 
-//				this.myList = neu;
-//				return; // ELement angelegt spring aus FUnktion.
-//			}
-//			vortmp = tmp;
-//			tmp = tmp.next;
-//			// durchsucht alle Element in liste 
-//			while(tmp != null)
-//			{
-//				if (tmp.value == suchID ) // wenn ID gefunden.
-//				{
-//					ListElement neu = new ListElement(value, text); 
-//					neu.setNext(tmp); 
-//					vortmp.setNext(neu);
-//					return; // ELement angelegt spring aus FUnktion.
-//				}
-//				vortmp = tmp;
-//				tmp = tmp.next; // next  in Liste
-//			}
-//		}
-//		// wird aufgerufen wenn kein Element in Liste  oder ID nicht gefunden wird. 
-//		einfuegenAmEnde(value, text);
-//	}
-//	
-//	
-//	public void loeschen(int value)
-//	{
-//		ListElement tmp = myList;
-//		if (tmp == null) // abfrage ob Liste leer
-//		{
-//			return;
-//		}
-//		
-//		if (tmp.getValue() == value) // abfrage ob erstes Element das Gesuchte ist
-//		{
-//			myList = tmp.getNext();
-//			return;
-//		}
-//		
-//		// so lange wie das nächste element nicht null
-//		while (tmp.getNext() != null){
-//			if (tmp.getNext().getValue() == value)
-//			{
-//				tmp.setNext(tmp.getNext().getNext());
-//				break;
-//			}
-//			tmp = tmp.getNext();
-//		}
-//	}
-//	public void allesLoeschen()
-//	{
-//		this.myList = null;
-//	}
+	
+	// Diese Funktion prüft ob noch Vokabeln vorhanden sind die noch nicht 3 mal richtig beantwortet wurden.
+	public boolean vokabelnNochVorhanden()
+	{
+		ListElement tmp = myList;
+		while(tmp != null)
+		{
+			if (tmp.getAussortierCounter() < 3)
+			{
+				return true;
+			}
+			tmp = tmp.next;
+		}
+		return false;
+	}
+	
+
 //	
 	public ListElement getVokabel(int suchID)
 	{
@@ -179,6 +101,40 @@ public class Liste {
 		}
 	}
 	
-	//----- End of Funktionen -----
-	
+
+	public void readFile (String fileName) throws IOException
+	{
+		if (fileName.isEmpty())
+		{
+			fileName = "vokabelliste.txt";
+		}
+		BufferedReader brFileReader = new BufferedReader(new FileReader(fileName));
+		String tmpZeile;
+		
+		String firstLine = brFileReader.readLine();
+		if (firstLine.equalsIgnoreCase("[Deutsch;Englisch]"))
+		{
+			//System.out.println("Header gefunden."); // just for Debug
+			
+			// geht die datei bis zur letzten zeile durch und bricht dann ab.
+			while ((tmpZeile = brFileReader.readLine()) != null) 
+			{
+				//System.out.println(tmpZeile); // just for Debug
+				String[] tmpSplitLine = tmpZeile.split(";");
+				
+				// wenn die Zeile Nicht nach dem vorgegeben Standart "wort1;wort2" ist, dann fügt er diese nicht hinzu.
+				if (tmpSplitLine.length == 2)
+				{
+					this.vokabelAdd(tmpSplitLine[1],tmpSplitLine[0]);
+				}
+				
+			}
+			
+		}
+		
+		// schließt den Bufferreader wieder.
+		brFileReader.close();
+		
+		
+	}
 }

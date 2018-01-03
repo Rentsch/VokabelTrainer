@@ -16,7 +16,14 @@ public class ListElement {
 		this.aussortierCounter = 0;
 		this.next = null; 
 	}
-	
+	public ListElement()
+	{		
+		this.englisch = null;
+		this.deutsch = null;
+		this.id = 0;
+		this.aussortierCounter = 0;
+		this.next = null; 	
+	}		
 	public String getEnglisch() {
 		return englisch;
 	}
@@ -45,8 +52,11 @@ public class ListElement {
 		return aussortierCounter;
 	}
 
-	public void setAussortierCounter(int aussortierCounter) {
-		this.aussortierCounter = aussortierCounter;
+	public void plusAussortierCounter() {
+		this.aussortierCounter++;
+	}
+	public void nullifieAussortierCounter() {
+		this.aussortierCounter = 0;
 	}
 
 	public ListElement getNext() {

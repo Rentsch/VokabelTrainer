@@ -1,0 +1,51 @@
+[Deutsch;Englisch]
+Hallo;Hello
+Verkehrsmittel;means of transport
+Fahrzeug;vehicle
+Stau;traffic jam
+Verkehrsunfall;road accident
+Reise;trip
+Eisenbahn;railway
+Bahnsteig;platform
+Fahrkartenschalter;ticket office
+Kontrolleur;ticket collector
+Zollamt;custom house
+Personenzug;passenger train
+Schnellzug;express train
+Lokomotive;engine
+Schlafwagen;sleeping car
+Notbremse;emergency brake
+Schiene;rail
+Gleis;track
+Triebwagen;rail car
+Weiche;points
+Autobahn;highway
+Cabrio;convertible
+Lastwagen;truck
+Taxi;taxi
+Motorrad;motor cycle
+Roller;scooter
+Anhänger;trailer
+Armaturenbrett;dashboard
+Bremse;brake
+Benzin;gas
+Gaspedal;accelerator
+Fahrgestell;chassis
+Karosserie;body
+Scheinwerfer;headlight
+Schalthebel;gear lever
+Tachometer;speedometer
+Zündung;ignition
+Unterhaltung;entertainment
+Freizeit;leisure
+Gesellschaftstanz;ballroom dance
+Gesangverein;choral society
+Wettspiel;match
+Spieler;player
+Regel;rule
+Schach;chess
+schachmatt;checkmate
+Kartenspiel;game of cards
+Herz;hearts
+Kreuz;clubs
+Pik;spades
