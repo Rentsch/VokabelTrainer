@@ -25,7 +25,7 @@ Lastwagen;truck
 Taxi;taxi
 Motorrad;motor cycle
 Roller;scooter
-Anhänger;trailer
+Auto;car
 Armaturenbrett;dashboard
 Bremse;brake
 Benzin;gas
@@ -35,7 +35,7 @@ Karosserie;body
 Scheinwerfer;headlight
 Schalthebel;gear lever
 Tachometer;speedometer
-Zündung;ignition
+Dynamit;dynamite
 Unterhaltung;entertainment
 Freizeit;leisure
 Gesellschaftstanz;ballroom dance
